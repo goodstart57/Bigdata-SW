@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <!--viewport는 모바일 개발할 때 필요하다. 지금은 필요하지 않다.-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pocketmon Legend</title>
+    <link rel="shortcut icon" href="images/ball.png">
+    <!--link-->
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <h1 class="logo"><img src="images\pokemon_logo.png" height="60px" alt="서리서리"></h1>
+            <ul class="info-menu">
+                <!--li*5>a[href="link"]-->
+                <li><a href="link">홈</a></li>
+                <li><a href="link">로그인</a></li>
+                <li><a href="link">회원가입</a></li>
+                <li><a href="link">사이트맵</a></li>
+                <li><a href="link">english</a></li>
+            </ul>
+
+            <nav class="naigation">
+                <ul class="main-menu">
+                    <li>
+                        <span tabindex="0">HTML에 대해</span>
+                        <ul class="about-html">
+                            <li><a href="#">HTML5 소개</a></li>
+                            <li><a href="#">레퍼런스 소개</a></li>
+                            <li><a href="#">활용예제</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span tabindex="0">css에 대해</span>
+                        <ul class="about-css">
+                            <li><a href="#">css 소개</a></li>
+                            <li><a href="#">CSS2 VS CSS3</a></li>
+                            <li><a href="#">CSS애니메이션</a></li>
+                            <li><a href="#">CSS Framework</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span tabindex="0">웹표준</span>
+                        <ul class="web-standards">
+                            <li><a href="#">웹표준이란?</a></li>
+                            <li><a href="#">W3C</a></li>
+                            <li><a href="#">HTML5의 현재와 미래</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span tabindex="0">웹접근성</span>
+                        <ul class="web-accessibility">
+                            <li><a href="#">웹 접근성의 개요</a></li>
+                            <li><a href="#">장애 환경의 이해</a></li>
+                            <li><a href="#">장치법</a></li>
+                            <li><a href="#">웹 접근성 품질마크</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span tabindex="0">묻고답하기</span>
+                        <ul class="qna">
+                            <li><a href="#">묻고답하기</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">1대1 질문</a></li>
+                            <li><a href="#">웹표준</a></li>
+                            <li><a href="#">웹접근성</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <span tabindex="0">자료실</span>
+                        <ul class="archive">
+                            <li><a href="#">공개 자료실</a></li>
+                            <li><a href="#">이미지 자료실</a></li>
+                            <li><a href="#">웹 표준 자료실</a></li>
+                            <li><a href="#">웹 접근성 자료실</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="visual">
+            <div class="visual-text">
+                Web Standards &amp; Accessibility
+            </div>
+        </div>
+        <!--header.header+div.visual+main.main-content+article.slogan+footer.footer-->
+
+        <main class="main-content">
+            <!--div.group.group${콘텐츠컬럼$}*3-->
+            <div class="group group1">사이트창</div>
+            <div class="group group2">메인창</div>
+            <div class="group group3">로그인창</div>
+        </main>
+
+        <!-- 아티클 영역은 제목을 정해줘야한다. -->
+        <article class="slogan">슬로건</article>
+        <div class="footer-bg">
+            <footer class="footer">
+                푸터
+            </footer>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="js/my_webcafe.js"></script>
+</body>
+
+</html>

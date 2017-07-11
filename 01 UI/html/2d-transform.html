@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>2D Transform 익히기</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            border: 1px solid #666;
+            height: 100px;
+            padding: 10px;
+        }
+        
+        .box {
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+        
+        .box1 {
+            transition: all 1s;
+        }
+        
+        .box1:hover {
+            transform: translate(50px, 0);
+        }
+        
+        .box2:hover {
+            transform: skew(15deg);
+        }
+        
+        .box3:hover {
+            transform: scale(1.2);
+            transform-origin: 0 0;
+            /*transform-origin: X% Y% 어디서부터 크기가 커질지 결정*/
+        }
+        
+        .box4:hover {
+            transform: rotate(45deg);
+            transform-origin: -100% 0%;
+        }
+    </style>
+
+    <div class="container">
+        <div class="box box1"></div>
+    </div>
+    <div class="container">
+        <div class="box box2"></div>
+    </div>
+    <div class="container">
+        <div class="box box3"></div>
+    </div>
+    <div class="container">
+        <div class="box box4"></div>
+    </div>
+</body>
+
+</html>

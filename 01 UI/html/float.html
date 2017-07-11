@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>float 속성 익히기</title>
+    <style>
+        .box {
+            background: yellow;
+            width: 500px;
+            /*overflow: hidden; = overflow되는 영역을 채워준다.*/
+        }
+        
+        .box:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        
+        .box img {
+            float: right;
+            position: relative;
+            right: -50px;
+        }
+        
+        .note {
+            background: pink;
+            /*clear: both;
+            margin-top: 100px;*/
+            /*clear: both; = float다음에 오는 요소에 쓰면 float와 겹치지 않는다.*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="../images/news.gif" alt=""> 백악관은 “트럼프 대통령은 프랑스와 강력한 우정을 재확인하기를 고대하고 있고
+    </div>
+    <div class="note">
+        백악관은 “트럼프 대통령은 프랑스와 강력한 우정을 재확인하기를 고대하고 있고, 이 중요한 날(프랑스 혁명 기념일)을 프랑인들과 함께 축하하며, 미국이 제1차 세계대전에 참전한 지 100주년이 된 것을 기념할 것”이라고 밝혔다.
+    </div>
+</body>
+
+</html>

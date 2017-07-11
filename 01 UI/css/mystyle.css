@@ -1,0 +1,359 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+
+/* 웹폰트 선언 */
+
+@font-face {
+    font-family: 'Noto Sans Regular';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Noto Sans Regular'), local('NotoSans-Regular'), url('font/eot/NotoSansKR-Regular-Hestia.eot'), url('font/eot/NotoSansKR-Regular-Hestia.eot?#iefix') format('embedded-opentype'), url('font/woff/NotoSansKR-Regular-Hestia.woff') format('woff'), url('font/otf/NotoSansKR-Regular-Hestia.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Noto Sans Bold';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Noto Sans Bold'), local('NotoSans-Bold'), url('font/eot/NotoSansKR-Bold-Hestia.eot'), url('font/eot/NotoSansKR-Bold-Hestia.eot?#iefix') format('embedded-opentype'), url('font/woff/NotoSansKR-Bold-Hestia.woff') format('woff'), url('font/otf/NotoSansKR-Bold-Hestia.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'webcafeIcon';
+    font-weight: 400;
+    src: url('font/webcafeIcon.eot');
+    src: url('font/webcafeIcon.eot?#iefix') format('embedded-opentype'), url('font/webcafeIcon.woff') format('woff'), url('font/webcafeIcon.ttf') format('truetype'), url('font/webcafeIcon.svg#webcaferegular') format('svg');
+}
+
+
+/* 요소의 여백 초기화 */
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 제목크기 초기화 */
+
+h1,
+h2,
+h3,
+h4 {
+    font-size: 3em;
+    font-weight: normal;
+}
+
+
+/* 기본 스타일 */
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-family: 'Noto Sans Regular', sans-serif;
+    /*NotoSansRegular가 인식되지 않으면 sans-serif 글꼴군에서 선택*/
+    font-size: 1.4rem;
+}
+
+
+/*body>div {
+    box-sizing: border-box;
+    padding: 10px;
+}*/
+
+
+/* 레이아웃 */
+
+
+/* #=id  .=class */
+
+.wrapper {
+    /*단축표기법*/
+    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%) repeat 0 0;
+    background-attachment: fixed;
+    /*배경을 고정시킨다*/
+    padding: 30px 0;
+    /*height: 50vh;*/
+}
+
+.header,
+.visual,
+.main-content,
+.slogan,
+.footer {
+    width: 940px;
+    margin: 0 auto;
+}
+
+
+/* 링크스타일 */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* 헤더 */
+
+.header {
+    box-sizing: border-box;
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    /*border-radius: 값; 모서리 라운딩*/
+    border: 1px solid #181818;
+    border-radius: 5px;
+    /* 앞 0은 위 아래 , 뒤 50은 양 옆 */
+    /*margin: 0 50px;*/
+    /* auto 는 남은 면적 계산해서 해줌 */
+    min-height: 115px;
+    font-family: 'Georgia';
+    padding: 0 30px;
+    position: relative;
+}
+
+
+/* 로고 */
+
+.logo {
+    /*레이아웃 배치*/
+    /*pos:static   : default
+          absolute : layer화, 상위 요소를 기준으로 포지션을 정한다
+          relative
+          fixed    : 스크롤을 내려도 화면에 항상 떠있다
+          sticky*/
+    position: absolute;
+    top: 45px;
+    left: 50px;
+}
+
+
+/* 텍스트링크 - 안내링크 */
+
+.info-menu {
+    /*background: #a6c1ee;*/
+    list-style-type: none;
+    font-size: 0;
+    text-align: right;
+    /*text-align: left;   default
+                : right;  오른쪽 정렬
+                : center; 가운데정렬
+      부모가 블록이어야한다.*/
+    right: -10px;
+}
+
+
+/* 클래스 하위의 요소를 불러올때 클래스 선택자 띄우고 요소선택자 */
+
+
+/* 44px은 되어야 성인 남성이 실수로 터치를 못하는 경우가 적다 */
+
+.info-menu li,
+.info-menu a {
+    display: inline-block;
+}
+
+.info-menu li {
+    /*background: lime;*/
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.info-menu li::after {
+    content: " : ";
+}
+
+.info-menu li:last-child::after {
+    content: "";
+}
+
+.info-menu a {
+    padding: 10px 0;
+}
+
+
+/* 메인메뉴 */
+
+.main-menu {
+    /*background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);*/
+    list-style-type: none;
+    border-top: 1px solid #181818;
+    border-radius: 0 5px;
+    padding-left: 225px;
+    height: 20px;
+}
+
+
+/* 요소를 가로로 정렬 */
+
+.main-menu>li {
+    float: left;
+    position: relative;
+    /*padding-top: 15px;*/
+}
+
+
+/* 명확한 자식 요소를 선택 */
+
+.main-menu>li>a {
+    font-size: 1.8rem;
+    font-family: "noto sans bold";
+    color: rgba(255, 255, 255, 0.95);
+    padding: 0 15px;
+    line-height: 45px;
+    display: block;
+    border-left: 2px solid rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 0px 0 #000, -1px 0px 0 #000, 0px -1px 0 #000, 0px 1px 0 #000;
+}
+
+.main-menu>li>a:hover {
+    color: hsla(35, 80%, 80%, 1);
+}
+
+
+/* ::after, ::before는 선택된 요소의 형제레벨의 요소를 만들어낸다.*/
+
+.main-menu>li>a:hover::after {
+    content: "";
+    display: block;
+    border-top: 2px solid #181818;
+}
+
+.main-menu ul {
+    list-style-type: none;
+    position: absolute;
+    /*background: lime;*/
+    /*강제로 줄바꿈 금지*/
+    white-space: nowrap;
+    top: 48px;
+}
+
+.main-menu ul li {
+    display: inline-block;
+}
+
+.main-menu ul a::before {
+    font-family: "webcafeIcon";
+    content: "r";
+}
+
+.main-menu ul a:hover::before,
+.main-menu ul a:focus::before {
+    content: "c";
+}
+
+.about-html {
+    display: none;
+}
+
+.about-css {
+    display: none;
+}
+
+.web-standards {
+    display: none;
+}
+
+.web-accessibility {
+    display: none;
+}
+
+.qna {
+    display: none;
+}
+
+.archive {
+    display: none;
+}
+
+.main-menu>li>.about-html:hover {
+    display: block;
+}
+
+.visual {
+    /*padding: 30px 0;*/
+    height: 140px;
+    position: relative;
+    /*이미지설정 : 정의한 순서로 보인다*/
+}
+
+.visual-text {
+    display: inline-block;
+    background: yellow;
+    animation-name: text-ani;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    /*animation-fill-mode: backwards = 0%에서 멈춘다.
+                         : forwards  = 100%에서 멈춘다*/
+}
+
+.main-content {
+    /*background: url(images\back_image.png) no-repeat 50% 0, #ffffff;*/
+    background: url("images/back_image.png") no-repeat, #ffffff;
+    border-radius: 20px 5px 5px 20px;
+    /*height: 400px; 높이를 400으로 고정*/
+    min-height: 800px;
+    display: flex;
+    padding: 30px;
+    box-sizing: border-box;
+    /*box를 넘지 않게한다*/
+    /*justify-content: space-between;*/
+    /*flex-direction: __;
+      콘텐츠를 가로방향 세로방향
+      배치를 정해준다 디폴트는 row*/
+    flex-direction: row;
+    justify-content: space-between;
+    /*align-items: flex-start;*/
+    /*align-items: 위치; 자식영역에 속하는 것의 위치를 바꾼다*/
+    border: 1px solid #181818;
+}
+
+.group {}
+
+.group1 {
+    border: 5px solid hsla(190, 80%, 80%, 1);
+    border-radius: 15px;
+    width: 150px;
+    /*align-self: flex-end; 각각 요소의 위치를 설정*/
+}
+
+.group2 {
+    border: 5px solid hsla(190, 80%, 80%, 1);
+    border-radius: 15px;
+    width: 480px;
+}
+
+.group3 {
+    border: 5px solid hsla(190, 80%, 80%, 1);
+    border-radius: 15px;
+    width: 190px;
+    /*order: -1;*/
+}
+
+.group a {
+    padding-left: 10px;
+    text-align: center;
+    width: 40%;
+    font-size: 1.8rem;
+}
+
+.slogan {
+    height: 10vh;
+}
+
+.footer-bg {
+    background-image: linear-gradient(to top, #fad0c4 0%, #fad0c4 1%, #ffd1ff 100%);
+}
+
+.footer {
+    /*background-color: blue;*/
+    height: 10vh;
+}

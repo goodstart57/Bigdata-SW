@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/*요소의 여백 초기화*/
+
+.body,
+.p1 {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    padding: 400px;
+    position: absolute;
+}

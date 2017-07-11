@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cube Demo</title>
+
+    <style>
+        .body {}
+        
+        .container {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            perspective: 1000px;
+            padding: 40px;
+        }
+        
+        #cube {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: all 0.5s;
+            transform: translateZ( -100px);
+        }
+        
+        #cube div {
+            width: 196px;
+            height: 196px;
+            display: block;
+            position: absolute;
+            border: 2px solid black;
+            font-size: 60px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            line-height: 196px;
+            /*line-height: 박스크기px; 세로방향기준 가운데정렬*/
+            /*margin-top: 0px;*/
+        }
+        
+        .front {
+            background: hsla(0, 70%, 50%, 0.7);
+            transform: rotateY(0deg) translateZ(100px);
+        }
+        
+        #cube.show-front {
+            transform: rotateY(0deg) translateZ(100px);
+        }
+        
+        .back {
+            background: hsla(60, 70%, 50%, 0.7);
+            transform: rotateX(180deg) translateZ(100px);
+        }
+        
+        #cube.show-back {
+            transform: rotateX(180deg) translateZ(100px);
+        }
+        
+        .right {
+            background: hsla(120, 70%, 50%, 0.7);
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        
+        #cube.show-right {
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        
+        .left {
+            background: hsla(180, 70%, 50%, 0.7);
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        
+        #cube.show-left {
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        
+        .top {
+            background: hsla(240, 70%, 50%, 0.7);
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        
+        #cube.show-top {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        
+        .bottom {
+            background: hsla(300, 70%, 50%, 0.7);
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        
+        #cube.show-bottom {
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        
+        .btn-wrap {
+            margin: 300px 0 0 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="cube">
+            <div class="front">1</div>
+            <div class="back">2</div>
+            <div class="right">3</div>
+            <div class="left">4</div>
+            <div class="top">5</div>
+            <div class="bottom">6</div>
+        </div>
+        <div class="btn-wrap">
+            <button class="btn-front">front</button>
+            <button class="btn-back">back</button>
+            <button class="btn-right">right</button>
+            <button class="btn-left">left</button>
+            <button class="btn-top">top</button>
+            <button class="btn-bottom">bottom</button>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            $(".btn-front").on("click", function() {
+                $("#cube").toggleClass("show-front");
+            });
+        });
+        $(function() {
+            $(".btn-back").on("click", function() {
+                $("#cube").toggleClass("show-back");
+            });
+        });
+        $(function() {
+            $(".btn-right").on("click", function() {
+                $("#cube").toggleClass("show-right");
+            });
+        });
+        $(function() {
+            $(".btn-left").on("click", function() {
+                $("#cube").toggleClass("show-left");
+            });
+        });
+        $(function() {
+            $(".btn-top").on("click", function() {
+                $("#cube").toggleClass("show-top");
+            });
+        });
+        $(function() {
+            $(".btn-bottom").on("click", function() {
+                $("#cube").toggleClass("show-bottom");
+            });
+        });
+    </script>
+</body>
+
+</html>
