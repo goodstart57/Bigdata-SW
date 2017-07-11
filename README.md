@@ -1,9 +1,54 @@
-# Bigdata-SW
-MD -> UI -> 자바 -> 알고리즘 -> R
+# REEEEEEEEEEEEEEEEEAD MEEE!!
 
-# 1. How to make md file
+1. GitBash 사용법
+    + 리모트 저장소를 로컬 저장소로 사용하기
+    + 로컬 저장소에서 리모트 저장소로 파일 업로드
 
-## 1.1 Headers
+<br>
+
+2. 마크다운 꾸미기
+    + Headers
+    + List style
+    + Coding Block
+    + Horizontal LIne
+    + Link
+    + Highlight
+    + image
+
+<hr/>
+
+# 1. GitBash 사용법
+
+## 1.1 리모트 저장소를 로컬 저장소로 사용하기
+
+github에서 새로운 저장소 만든 뒤에 
+
+    git clone [repository URL] [file name(optional)]
+
+를 이용해서 복사해 온다 (브런치생성, URL의 닉네임이 origin으로 자동생성)
+
+## 1.2 로컬 저장소에서 리모트 저장소로 파일 업로드
+
+로컬 저장소에서 파일 수정 후 확인
+
+    git status 
+
+로컬 저장소와 리모트 저장소 사이에 스테이징
+
+    git add [file name]
+
+커밋
+
+    git commit -m "message"
+
+푸시(업로드)
+
+    git push origin [branch name]
+
+
+# 2. 마크다운 꾸미기
+
+## 2.1 Headers
 
 > Code
 ```md
@@ -24,7 +69,7 @@ MD -> UI -> 자바 -> 알고리즘 -> R
 
 <br>
 
-## 1.2 list style
+## 2.2 list style
 
 > Code
 ```md
@@ -65,7 +110,7 @@ MD -> UI -> 자바 -> 알고리즘 -> R
 
 <br>
 
-## 1.3 Coding Block
+## 2.3 Coding Block
 > Code
 ```md
 <pre><code>Hello</code></pre>
@@ -78,7 +123,7 @@ MD -> UI -> 자바 -> 알고리즘 -> R
 
 <br>
 
-## 1.4 Horizontal line
+## 2.4 Horizontal line
 >Code
 ```md
 ***
@@ -93,7 +138,7 @@ MD -> UI -> 자바 -> 알고리즘 -> R
 
 <br>
 
-## 1.5 link
+## 2.5 link
 
 > Code
 ```md
@@ -108,7 +153,7 @@ MD -> UI -> 자바 -> 알고리즘 -> R
 
 <br>
 
-## 1.6 Highlight
+## 2.6 Highlight
 Code | Output
 --|--
 \*Italic* or \_Italic_ | _Italic_
@@ -117,7 +162,7 @@ Code | Output
 \<U>underline\</U> | <U>underline</U>
 \~\~strike-out~~ | ~~strike-out~~
 
-## 1.7 Image
+## 2.7 Image
 
 > Code
 ```md
