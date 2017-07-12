@@ -1,5 +1,8 @@
 # JAVA
-Day02 : 객체지향 특징, 변수, 제한자, 코딩 관례, 오버라이딩
+## Day02
+1. 객체지향 특징
+2. 변수
+3. import 함수를 이용한 scanner
 
 <hr/>
 
@@ -108,7 +111,7 @@ final : 변수를 상수와 같이 바뀔 수 없도록 만든다. static과 함
 
 <br>
 
-## 스캐너
+## import 함수를 이용한 scanner
 
 ```java
 package first.second;
