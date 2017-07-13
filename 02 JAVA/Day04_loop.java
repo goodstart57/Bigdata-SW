@@ -3,7 +3,7 @@ package first.second;
 public class loop {
 
 	public static void main(String[] args) {
-		System.out.println("»ï°¢Çü1");
+		System.out.println("Triangle1");
 		for(int i=0; i<10; i++) {
 			for(int j=0; j<10; j++) {
 				if(i>=j) System.out.print("*");
@@ -12,7 +12,7 @@ public class loop {
 			System.out.println();
 		}
 		System.out.println();
-		System.out.println("»ï°¢Çü2");
+		System.out.println("Triangle2");
 		for(int i=9; i>=0; i--) {
 			for(int j=0; j<10; j++) {
 				if(i>=j) System.out.print("*");
@@ -31,7 +31,7 @@ public class loop {
 		}
 		
 		System.out.println();
-		System.out.println("¸¶¸§¸ð");
+		System.out.println("diamond");
 		for(int i=0; i<10; i++) {
 			for(int j=0; j<10; j++) {
 				if(i<5) {
