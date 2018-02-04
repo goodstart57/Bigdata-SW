@@ -1,33 +1,39 @@
-# REEEEEEEEEEEEEEEEEAD MEEE!!
+# READ ME
 
-1. GitBash 사용법
-    + 리모트 저장소를 로컬 저장소로 사용하기
-    + 로컬 저장소에서 리모트 저장소로 파일 업로드
+#### Index
+
+__1. GitBash 사용법__
++ git clone을 사용하여 리모트 저장소를 로컬에 깃저장소로 저장하기
++ 로컬 저장소에서 리모트 저장소로 파일 업로드
++ 기타
 
 <br>
 
-2. 마크다운 꾸미기
-    + Headers
-    + List style
-    + Coding Block
-    + Horizontal LIne
-    + Link
-    + Highlight
-    + image
+__2. 마크다운 꾸미기__
++ Headers
++ List style
++ Coding Block
++ Horizontal LIne
++ Link
++ Highlight
++ image
 
 <hr/>
 
-# 1. GitBash 사용법
+<br>
 
-## 1.1 리모트 저장소를 로컬 저장소로 사용하기
+## 1. Git 사용법
+
+### 1.1 리모트 저장소를 로컬 저장소에 깃저장소로 저장
 
 github에서 새로운 저장소 만든 뒤에 
 
     git clone [repository URL] [file name(optional)]
-
 를 이용해서 복사해 온다 (브런치생성, URL의 닉네임이 origin으로 자동생성)
 
-## 1.2 로컬 저장소에서 리모트 저장소로 파일 업로드
+<br>
+
+### 1.2 로컬 저장소에서 리모트 저장소로 파일 업로드
 
 로컬 저장소에서 파일 수정 후 확인
 
@@ -36,6 +42,11 @@ github에서 새로운 저장소 만든 뒤에
 로컬 저장소와 리모트 저장소 사이에 스테이징
 
     git add [file name]
+다시한번 변경사항 확인
+
+```
+git status 
+```
 
 커밋
 
@@ -44,11 +55,34 @@ github에서 새로운 저장소 만든 뒤에
 푸시(업로드)
 
     git push origin [branch name]
+<br>
 
+### 1.3 기타
 
-# 2. 마크다운 꾸미기
+리모트 저장소로 설정되길 원하는 로컬 저장소의 디렉토리에 위치한 채로 아래 코드 실행하면 깃 저장소로 설정
 
-## 2.1 Headers
+```
+git init
+git remote add origin [github repository url]
+```
+
+커밋된 기록 보기
+
+```g
+git log
+```
+
+최근 커밋 이후의 변경사항 조회
+
+```
+git diff
+```
+
+<br>
+
+## 2. 마크다운 꾸미기
+
+### 2.1 Headers
 
 > Code
 ```md
@@ -69,7 +103,7 @@ github에서 새로운 저장소 만든 뒤에
 
 <br>
 
-## 2.2 list style
+### 2.2 list style
 
 > Code
 ```md
@@ -91,8 +125,8 @@ github에서 새로운 저장소 만든 뒤에
 <br>
 
 1. First
-3. Third
-2. Second
+2. Third
+3. Second
 
 > Code2
 ```md
@@ -110,7 +144,7 @@ github에서 새로운 저장소 만든 뒤에
 
 <br>
 
-## 2.3 Coding Block
+### 2.3 Coding Block
 > Code
 ```md
 <pre><code>Hello</code></pre>
@@ -118,12 +152,12 @@ github에서 새로운 저장소 만든 뒤에
 ```
 
 > Output
-<pre><code>Hello</code></pre>
+> <pre><code>Hello</code></pre>
     Hello
 
 <br>
 
-## 2.4 Horizontal line
+### 2.4 Horizontal line
 >Code
 ```md
 ***
@@ -138,7 +172,7 @@ github에서 새로운 저장소 만든 뒤에
 
 <br>
 
-## 2.5 link
+### 2.5 link
 
 > Code
 ```md
@@ -153,16 +187,16 @@ github에서 새로운 저장소 만든 뒤에
 
 <br>
 
-## 2.6 Highlight
-Code | Output
---|--
-\*Italic* or \_Italic_ | _Italic_
-\*\*Bold** or \_\_Bold__ | **Bold**
-\*\*\*BoldItalic*** or \_\_\_BoldItalic___ | ***BoldItalic***
-\<U>underline\</U> | <U>underline</U>
-\~\~strike-out~~ | ~~strike-out~~
+### 2.6 Highlight
+| Code                                     | Output           |
+| ---------------------------------------- | ---------------- |
+| \*Italic* or \_Italic_                   | _Italic_         |
+| \*\*Bold** or \_\_Bold__                 | **Bold**         |
+| \*\*\*BoldItalic*** or \_\_\_BoldItalic___ | ***BoldItalic*** |
+| \<U>underline\</U>                       | <U>underline</U> |
+| \~\~strike-out~~                         | ~~strike-out~~   |
 
-## 2.7 Image
+### 2.7 Image
 
 > Code
 ```md
@@ -171,7 +205,7 @@ Code | Output
 ![Alt text](http://cfile26.uf.tistory.com/image/2463694C53D0A5D80629B3)
 ```
 > Output
-![Alt text](http://cfile26.uf.tistory.com/image/2463694C53D0A5D80629B3)
+> ![Alt text](http://cfile26.uf.tistory.com/image/2463694C53D0A5D80629B3)
 
 
 
