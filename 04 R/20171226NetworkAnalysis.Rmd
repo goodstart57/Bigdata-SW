@@ -1,0 +1,62 @@
+---
+title: "Network Analysis"
+author: "Lee JaeSeo"
+date: "2017년 12월 26일"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+## 20171226 화
+
+```{r}
+library(igraph)
+```
+
+
+```{r}
+g_star <- graph(edges = NULL, n=NULL, directed=FALSE)
+g_star <- g_star + vertex("A", shape="circle", size=15)
+g_star <- g_star + vertices(LETTERS[2:13], shape="circle", size=15)
+g_star <- g_star + edges("A", "B", "B","C","B","D","D","E","E","F","E","G","E","H","G","K","G","J","G","L","J","M","L","M","H","I")
+plot(g_star)
+
+# 각 노드의 연결 정도 중심성
+degree(g_star, normalized = FALSE)
+
+# 정규화된 연결 중심성
+degree(g_star, normalized = TRUE)
+
+# 이론적 연결 정도 중심화 최댓값
+tmax <- centr_degree_tmax(g_star)
+
+# 정규화된 연결 정도 중심화
+centralization.degree(g_star, normalized = FALSE)$centralization/tmax
+```
+
+
+igraph ex2
+```{r}
+g_star <- graph(edges = NULL, n=NULL, directed=FALSE)
+g_star <- g_star + vertices(LETTERS[c(1:8,11:13)], shape="circle", size=15)
+g_star <- g_star + edges("A","B","A","C","A","D","C","E","C","F","E","M","F","K","F","G","G","L","G","H","B","H","C","B","C","D","D","E","E","F","K","M")
+plot(g_star)
+
+# 각 노드의 연결 정도 중심성
+degree(g_star, normalized = FALSE)
+
+# 정규화된 연결 중심성
+degree(g_star, normalized = TRUE)
+
+# 이론적 연결 정도 중심화 최댓값
+tmax <- centr_degree_tmax(g_star)
+
+# 정규화된 연결 정도 중심화
+centralization.degree(g_star, normalized = FALSE)$centralization/tmax
+
+# 근접중심성
+closeness(g_star)
+```
+
+
+

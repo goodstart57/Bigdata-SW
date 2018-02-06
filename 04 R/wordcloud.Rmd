@@ -1,0 +1,81 @@
+---
+title: "wordcloud"
+author: "Lee JaeSeo"
+date: "2017년 10월 21일"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, message=FALSE, warning=FALSE}
+library(KoNLP)
+library(wordcloud)
+```
+
+```{r}
+useSejongDic()
+mergeUserDic((data.frame("하늘공원", "ncn")))
+data1 <- readLines("./[R] Source/[005-1] WC/noh.txt")
+data2 <- sapply(data1, extractNoun, USE.NAMES = FALSE)
+data3 <- unlist(data2)
+
+data3 <- gsub("\\d+","",data3)
+data3 <- gsub("\","",data3)
+data3 <- gsub("[\"]","",data3)
+data3 <- gsub("OO","",data3)
+data3 <- gsub("secret","",data3)
+
+data4 <- table(data3)
+nrow(data4)
+wordcount <- data4
+head(sort(wordcount, decreasing=T),20)
+```
+
+
+```{r}
+data3 <- gsub("완료", "", data3)
+data3 <- gsub("김", "", data3)
+data3 <- gsub("이", "", data3)
+data3 <- gsub("박", "", data3)
+data3 <- gsub("것", "", data3)
+data3 <- gsub("최", "", data3)
+data3 <- gsub("관련", "", data3)
+data3 <- gsub("축", "", data3)
+data3 <- gsub("한", "", data3)
+data3 <- gsub("정", "", data3)
+data3 <- gsub("요청", "", data3)
+data3 <- gsub("행", "", data3)
+data3 <- gsub("동", "", data3)
+data3 <- gsub("홍", "", data3)
+data3 <- gsub("강", "", data3)
+
+data4 <- table(data3)
+wordcount <- data4
+head(sort(wordcount, decreasing = T),20)
+```
+
+```{r}
+library(RColorBrewer)
+display.brewer.all(type="all")
+display.brewer.all(type="div")
+display.brewer.all(type="qual")
+display.brewer.all(type="seq")
+palete <- brewer.pal(8, "Dark2")
+```
+
+```{r}
+wordcloud(names(wordcount), freq=wordcount, scale=c(5,1), rot.per=0.25, min.freq=3, random.order=F, random.color=T, colors=palete)
+
+# scale : 최대빈도 단어와 최소빈도 단어 사이의 글씨크기차이
+# rot.per : 90도 회전된 각도로 출력될 단어 비율
+# min.freq : 출력될 단어들의 최소빈도
+# random.order : “TRUE” 랜덤 출력, “FALSE” 빈도순 출력
+# random.color : “TRUE” 랜덤 출력, “FALSE” 빈도순 출력
+
+```
+
+
+
+
+
+

@@ -1,0 +1,85 @@
+---
+title: "20171220Association"
+author: "Lee JaeSeo"
+date: "2017년 12월 20일"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+### load package
+```{r}
+#install.packages(c("arules", "igcombinat"))
+library(readxl)
+library(arules)
+library(igraph)
+library(combinat)
+library(KoNLP)
+```
+
+### load data
+```{r}
+kanghwang <- read_excel("./Data/강황검색어.xlsx", col_names=FALSE)
+kanghwang <- as.data.frame(kanghwang)
+names(kanghwang) <- "kanghwang"
+head(kanghwang)
+str(kanghwang)
+kanghwang <- kanghwang$kanghwang
+```
+
+```{r}
+tran <- Map(extractNoun, kanghwang)
+tran
+tran <- unique(tran)
+tran <- sapply(tran, unique)
+tran
+tran <- sapply(tran, function(x){Filter(function(y) {nchar(y)<=4 && nchar(y)>1 && is.hangul(y)}, x)})
+tran
+
+names(tran) <- paste("Tr", 1:length(tran), sep="")
+names(tran)
+wordtran <- as(tran, "transactions")
+wordtran
+wordtab <- crossTable(wordtran)
+head(wordtab)
+
+ares <- apriori(wordtran, parameter=list(supp=0.005, conf=0.05))
+inspect(ares)
+
+#===================================================
+# 시각화 작업
+
+rules <- labels(ares, ruleSep=" ")
+rules <- sapply(rules, strsplit, " ", USE.NAMES=F)
+rulemat <- do.call("rbind", rules)
+
+ruleg <- graph.edgelist(rulemat[-c(1:16),], directed=F)
+plot.igraph(ruleg, vertex.label=V(ruleg)$name, vertex.label.cex=1,
+            vertex.size=30, layout=layout.fruchterman.reingold.grid)
+```
+
+
+
+### 레저 연구 자료 분석
+
+```{r}
+data <- read.csv("./Data/레저연구.csv")
+head(data)
+str(data)
+```
+
+```{r}
+attach(data)
+table(a1)
+table(Gender)
+test1 <- subset(data, select=paste0("a", 33:55))
+head(test1)
+
+fit <- factanal(test1, factors=5, rotation="varimax")
+print(fit, cutoff=0.4, digit=3)
+
+
+```
+
+
+
