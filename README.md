@@ -24,6 +24,8 @@ __2. 마크다운 꾸미기__
 
 ## 1. Git 사용법
 
+[Git 한글 설명서](https://git-scm.com/book/ko/v2/)
+
 ### 1.1 리모트 저장소를 로컬 저장소에 깃저장소로 저장
 
 github에서 새로운 저장소 만든 뒤에 
@@ -77,6 +79,15 @@ git log
 ```
 git diff
 ```
+
+깃 username과 email 등록
+
+```
+git config --global user.name [user nickname]
+git config --global user.email [user email]
+```
+
+
 
 <br>
 
