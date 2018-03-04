@@ -14,9 +14,9 @@
 
 <br>
 
-## 1. Android Studio를 이용하여 apk파일 제작
+# 1. Android Studio를 이용하여 apk파일 제작
 
-- res-layout-new-layout resource file으로 mylayout.xml 생성, MainActivity에서 layout파일 변경
+- ### res-layout-new-layout resource file으로 mylayout.xml 생성,<br> MainActivity에서 layout파일 변경
 
 ```java
 public class MainActivity extends AppCompatActivity {
